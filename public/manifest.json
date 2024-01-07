@@ -1,0 +1,23 @@
+{
+  "name": "Inboxer",
+  "description": "A temporary email inbox right in your browser",
+  "version": "1.0.0",
+  "manifest_version": 2,
+  "homepage_url": "https://github.com/sz-hankus",
+  "browser_action": {
+    "default_popup": "index.html",
+    "default_title": "Inboxer",
+    "default_icon": {
+      "48": "logo48.png",
+      "96": "logo96.png"
+    }
+  },
+  "icons": {
+    "48": "logo48.png",
+    "96": "logo96.png"
+  },
+  "permissions": [
+    "clipboardWrite",
+    "storage"
+  ]
+}
