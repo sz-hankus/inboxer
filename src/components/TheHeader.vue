@@ -14,6 +14,9 @@ header {
   display: flex;
   flex-direction: row;
   align-items: center; 
+  gap: 10px;
+  margin-left: 0.6rem;
+  margin-bottom: 0.2rem;
 }
 
 #envelope-icon {
