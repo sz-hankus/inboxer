@@ -51,8 +51,14 @@ onMounted(() => { fetchEmails() })
             <path stroke-linecap="round" stroke-linejoin="round" d="M16.023 9.348h4.992v-.001M2.985 19.644v-4.992m0 0h4.992m-4.993 0 3.181 3.183a8.25 8.25 0 0 0 13.803-3.7M4.031 9.865a8.25 8.25 0 0 1 13.803-3.7l3.181 3.182m0-4.991v4.99" />
           </svg>
         </button>
+
+        <button class="svg-button" id="new-addr-button" @click="generateNewAddress()">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M17.982 18.725A7.488 7.488 0 0 0 12 15.75a7.488 7.488 0 0 0-5.982 2.975m11.963 0a9 9 0 1 0-11.963 0m11.963 0A8.966 8.966 0 0 1 12 21a8.966 8.966 0 0 1-5.982-2.275M15 9.75a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
+          </svg>
+        </button>
+
       </div>
-      <button @click="newAddress()">New address</button>
       <PreviewList :address="props.address" :previews="emails"></PreviewList>
     </div>
 </template>
@@ -129,4 +135,11 @@ onMounted(() => { fetchEmails() })
   color: #1f2937;
 }
 
+#new-addr-button svg {
+  color: #64748b;
+  height: 20px;
+}
+#new-addr-button svg:hover {
+  color: #1f2937;
+}
 </style>
