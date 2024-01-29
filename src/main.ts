@@ -7,7 +7,8 @@ import router from './core/router'
 const app = createApp(App);
 
 app.use(router);
-router.push({name: "home"})
+if (window.location.pathname == '/index.html')
+    router.push({name: "home"})
 
 console.log("Staring app...")
 app.mount('#app');

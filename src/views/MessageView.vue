@@ -23,7 +23,7 @@ onMounted( async () => {
   <main>
     <h2 @click="router.back()">Back</h2>
     <h3>{{ details?.date }}</h3>
-    <h1>{{ details?.subject }}</h1>
+    <h3>{{ details?.subject }}</h3>
     <h2>{{ details?.from }}</h2>
     <div class="email-body">
       <span v-html="details?.body"></span>

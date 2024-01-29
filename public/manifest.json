@@ -3,7 +3,7 @@
   "description": "A temporary email inbox right in your browser",
   "version": "1.0.0",
   "manifest_version": 2,
-  "homepage_url": "https://github.com/sz-hankus",
+  "homepage_url": "https://github.com/sz-hankus/inboxer",
   "browser_action": {
     "default_popup": "index.html",
     "default_title": "Inboxer",
