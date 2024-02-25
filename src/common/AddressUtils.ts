@@ -1,4 +1,5 @@
 import type { Address } from "./models";
+import browser from "webextension-polyfill";
 
 const LS_ADDR_NAME = "address";
 const DEFAULT_DOMAIN = "1secmail.org";
@@ -18,20 +19,22 @@ const getRandomLogin = (length: number): string => {
 }
 
 const generateNewAddress = (): Address => {
-    const newAddress = { login: getRandomLogin(10), domain: DEFAULT_DOMAIN };
-    return newAddress;
+  const newAddress = { login: getRandomLogin(10), domain: DEFAULT_DOMAIN };
+  return newAddress;
 }
 
-const getAddressFromStorage = (): Address | undefined => {
-  const stored = JSON.parse(localStorage.getItem(LS_ADDR_NAME) || "{}");
-  if (isValidAddress(stored))
-    return stored;
-  else
-    return undefined;
+const getAddressFromStorage = async (): Promise<Address | undefined> => {
+  console.log("getting address from storage");
+  const address = browser.storage.local.get(LS_ADDR_NAME).then(stored => {
+    console.log("stored", stored[LS_ADDR_NAME]);
+    return stored[LS_ADDR_NAME] as Address || undefined;
+  });
+  return address;
 }
 
-const saveAddressToStorage = (addr: Address) => {
-  localStorage.setItem(LS_ADDR_NAME, JSON.stringify(addr));
+const saveAddressToStorage = async (address: Address) => {
+  console.log("saving address to storage", address)
+  await browser.storage.local.set({ [LS_ADDR_NAME]: address });
 }
 
 

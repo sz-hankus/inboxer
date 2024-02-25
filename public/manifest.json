@@ -8,13 +8,13 @@
     "default_popup": "index.html",
     "default_title": "Inboxer",
     "default_icon": {
-      "48": "logo48.png",
-      "96": "logo96.png"
+      "48": "favicon.ico",
+      "96": "favicon.ico"
     }
   },
   "icons": {
-    "48": "logo48.png",
-    "96": "logo96.png"
+    "48": "favicon.ico",
+    "96": "favicon.ico"
   },
   "permissions": [
     "clipboardWrite",
